@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingPrak9", "TestingPrak9\TestingPrak9.csproj", "{EFDB8B3B-973A-4D23-A392-07F3E8517BFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prak9Tests", "Prak9Tests\Prak9Tests.csproj", "{69B63EB6-7CC9-46AC-AE9B-41395741283E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFDB8B3B-973A-4D23-A392-07F3E8517BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFDB8B3B-973A-4D23-A392-07F3E8517BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFDB8B3B-973A-4D23-A392-07F3E8517BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFDB8B3B-973A-4D23-A392-07F3E8517BFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69B63EB6-7CC9-46AC-AE9B-41395741283E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69B63EB6-7CC9-46AC-AE9B-41395741283E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69B63EB6-7CC9-46AC-AE9B-41395741283E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69B63EB6-7CC9-46AC-AE9B-41395741283E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52279001-E626-4C43-8AB5-C912CFDAE79F}
+	EndGlobalSection
+EndGlobal
