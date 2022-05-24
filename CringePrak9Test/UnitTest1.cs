@@ -2,6 +2,7 @@
 using CringePrak9;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace CringePrak9Test
 {
@@ -44,8 +45,8 @@ namespace CringePrak9Test
                 Medicine medicine = new Medicine(names[i], producers[i], 115 * (i + 1));
 
                 apteka.AddMedicine(medicine, 10 * (i + 1));
+                if (i == 0) medicines.Add(medicine);
             }
-            medicines.Add(new Medicine(names[0], producers[0], 115));
 
             CollectionAssert.AreEqual(medicines, apteka.GetMedicinesByName("Дротаверин"));
         }
@@ -65,9 +66,8 @@ namespace CringePrak9Test
                 Medicine medicine = new Medicine(names[i], producers[i], 115 * (i + 1));
 
                 apteka.AddMedicine(medicine, 10 * (i + 1));
+                if (i == 1) medicines.Add(medicine);
             }
-            medicines.Add(new Medicine(names[1], producers[1], 115 * 2));
-
 
             CollectionAssert.AreEqual(medicines, apteka.GetMedicinesByProducer("Биокад"));
         }
@@ -98,23 +98,22 @@ namespace CringePrak9Test
         [TestMethod]
         public void GetMostExpensiveTest()
         {
-            var medicines = new List<Medicine>();
-
             var apteka = new Apteka("Бари Галеева 3");
 
             var names = new List<string> { "Дротаверин", "Платифиллин", "Ондансетрон" };
             var producers = new List<string> { "Тева", "Биокад", "Генериум" };
+            Medicine waitingMedicine = null;
 
             for (int i = 0; i < 3; i++)
             {
                 Medicine medicine = new Medicine(names[i], producers[i], 115 * (i + 1));
 
                 apteka.AddMedicine(medicine, 10 * (i + 1));
+                if (i == 2) 
+                   waitingMedicine = medicine;
             }
 
-            medicines.Add(new Medicine(names[2], producers[2], 115 * 3));
-
-            Assert.AreEqual(medicines, apteka.GetMostExponsiveMedicine());
+            Assert.AreEqual(waitingMedicine, apteka.GetMostExponsiveMedicine());
         }
     }
 }

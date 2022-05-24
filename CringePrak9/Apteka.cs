@@ -8,28 +8,28 @@ namespace CringePrak9
     {
         public string Address { get; set; }
 
-        public List<MedicineStorage> Medicines { get; set; }
+        public Dictionary<Medicine, int> Medicines { get; set; }
 
         public Apteka()
         {
-            Medicines = new List<MedicineStorage>();
+            Medicines = new Dictionary<Medicine, int>();
         }
 
         public Apteka(string address)
         {
-            Medicines = new List<MedicineStorage>();
+            Medicines = new Dictionary<Medicine, int>();
             Address = address;
         }
 
-        public void AddMedicine(Medicine medicine, int count)
+        public void AddMedicine(Medicine med, int count)
         {
-            Medicines.Add(new MedicineStorage(medicine, count));
+            Medicines.Add(med, count);
         }
 
         public List<Medicine> GetMedicinesByName(string name)
         {
-            var medicines = Medicines.Keys.Where(x => x.Name == name).ToList();
-            return medicines;
+            var meds = Medicines.Keys.Where(x => x.Name == name).ToList();
+            return meds;
         }
 
         public List<Medicine> GetMedicinesByProducer(string producer)
@@ -39,7 +39,7 @@ namespace CringePrak9
 
         public Medicine GetMostExponsiveMedicine()
         {
-            return Medicines.Keys.Where(x => x.Price == Medicines.Keys.Max(y => y.Price)).FirstOrDefault();
+            return Medicines.Keys.OrderByDescending(x => x.Price).ToList()[0];
         }
 
         public List<Medicine> GetSortedMedicinesMinMax()
